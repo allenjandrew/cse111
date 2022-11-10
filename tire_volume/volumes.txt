@@ -1,0 +1,3 @@
+date, tire_width, aspect_ratio, tire_diameter, tire_volume
+2022-09-22, 205mm, 60, 15in, 39.92L
+2022-09-22, 210mm, 80, 13in, 55.22L
