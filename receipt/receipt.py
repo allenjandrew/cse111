@@ -1,4 +1,6 @@
 import csv
+import datetime
+import sys
 
 print()
 
@@ -8,17 +10,44 @@ def main():
     NAME_IND = 1
     PRICE_IND = 2
 
-    products_dict = read_dictionary('receipt/products.csv',PRO_NUM_IND)
-    print(products_dict)
+    try: products_dict = read_dictionary('receipt/products.csv',PRO_NUM_IND)
+    except PermissionError:
+        print('You don\'t have permission to view that file. Loser.\n')
+        sys.exit()
+    except FileNotFoundError:
+        print('That file doesn\'t exist. Just like your dad\n')
+        sys.exit()
+    # print(products_dict)
 
-    print('\nRequested Items:')
+    print('\nWelcome to Ardy\'s!')
+    print('\nRequested Items:\n')
+
     with open('receipt/request.csv') as cust_order:
         reader = csv.reader(cust_order)
         next(reader)
-        for line in reader:
-            product = products_dict[line[PRO_NUM_IND]]
-            print(f'{line[QUANT_IND]} of item {product[NAME_IND]} @ ${product[PRICE_IND]} ea for total of ${int(line[QUANT_IND]) * float(product[PRICE_IND]):.2f}')
+        total_cost = 0
+        total_items = 0
 
+        for line in reader:
+            try:
+                product = products_dict[line[PRO_NUM_IND]]
+                num_items = int(line[QUANT_IND])
+                product_cost = num_items * float(product[PRICE_IND])
+                print(f'{product[NAME_IND].capitalize()}: {line[QUANT_IND]} @ ${product[PRICE_IND]} ea ----- ${product_cost:.2f}')
+                total_cost += product_cost
+                total_items += num_items
+            except KeyError as keyE:
+                print(f'You\'ve got a problem. {keyE} is not a valid product number. We\'ve removed it from your order.')
+
+        print(f'\n{total_items} total items')
+        print(f'Subtotal ----- ${total_cost:.2f}')
+        sales_tax = total_cost * .06
+        total_cost += sales_tax
+        print(f'Sales tax ----- ${sales_tax:.2f}')
+        print(f'Total cost ----- ${total_cost:.2f}')
+
+        print('\nThank you for shopping at Ardy\'s! See you soon!')
+        print(datetime.datetime.now().strftime('%c'))
     
 
 
