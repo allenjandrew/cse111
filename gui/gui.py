@@ -72,15 +72,15 @@ def populate_main_window(frm_main):
     btn_clear = tk.Button(frm_main, text="Clear")
 
     # Layout all the labels, entry boxes, and buttons in a grid.
-    lbl_rr.grid(    row=0, column=0, padx=3, pady=3)
-    ent_rr.grid(    row=0, column=1, padx=3, pady=3)
-    lbl_growth.grid(row=1, column=0, padx=3, pady=3)
-    ent_growth.grid(row=1, column=1, padx=3, pady=3)
-    lbl_div.grid(   row=2, column=0, padx=3, pady=3)
-    ent_div.grid(   row=2, column=1, padx=3, pady=3)
-    lbl_price.grid( row=0, column=2, padx=(30,3), pady=3)
-    lbl_result.grid(row=0, column=3, padx=3, pady=3)
-    btn_clear.grid( row=2, column=3, padx=3, pady=3, columnspan=5, sticky="w")
+    lbl_rr.grid(    row=0, column=0, padx=5, pady=5)
+    ent_rr.grid(    row=0, column=1, padx=5, pady=5)
+    lbl_growth.grid(row=1, column=0, padx=5, pady=5)
+    ent_growth.grid(row=1, column=1, padx=5, pady=5)
+    lbl_div.grid(   row=2, column=0, padx=5, pady=5)
+    ent_div.grid(   row=2, column=1, padx=5, pady=5)
+    lbl_price.grid( row=0, column=2, padx=5, pady=5)
+    lbl_result.grid(row=0, column=3, padx=5, pady=5)
+    btn_clear.grid( row=2, column=3, padx=5, pady=5, columnspan=5, sticky="w")
 
 
     # This function will be called each time the user releases a key.
