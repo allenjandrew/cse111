@@ -1,0 +1,17 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+
+    During this last prove assignment, I defined over a dozen functions to help me with my code. It was super helpful to break it down into different steps.
+    In addition to the coursework, these last couple weeks I've also been working on the Advent of Code. On one of these projects, I used a recursive function for the first time; for another, I used several lambda functions. It was really cool to see the power and versatility of funcions.
+
+2. In your judgment, what is the value of test functions?
+
+    Test functions are essential when it comes to adding code to large programs – you can't have your new code ruin the program, especially if it's a website that people are still using. Test functions are also helpful on personal projects as a debugging tool.
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+
+    The first thing I'll do is review the error message, if any. It references a specific line of code which I can then go back and fix up. Or, if it's a logic error, I'll manually review the code that's giving me the wrong result to check what logic needs to be fixed. If neither of those methods work, I'll set a breakpoint and use the debugger to follow the variables. So far, this process has helped me solve all my errors. Afterwards, I try to create a test function to verify that my functions always return correct results.
